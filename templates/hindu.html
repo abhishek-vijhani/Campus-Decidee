@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<style>
+       #map {
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+ <title>Campus Decidee</title>
+        {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'format.css' %}">
+    <style>
+
+        table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    vertical-align: bottom;
+}
+    </style>
+    <script>
+        if(!(sessionStorage.getItem('Uname'))){
+            alert('Please Login....');
+            window.open('../login/','_self');
+        }
+    </script>
+</head>
+<body background="{% static 'pics/magic-book.jpg' %}">
+        <div class="d1">
+                <a href="../home/"><img src="{% static 'pics/campusdecidee.jpeg' %}"  height='90px' width="1349px"/></a>
+        </div>
+        <!--<div class=d2 id="d2a">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right">
+                    <a href="../login/" class=a1>LOGIN</a>
+                    <a href="../Register/" class=a1>REGISTER </a>
+                </h5>
+        </div>-->
+        <div class=d2 id="d2b">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right;">
+                    <font style="font-size: 1.5em;">Hello, <span ID="sp1"> </span></font>
+                    <a href="../logout/" class=a1>LogOut </a>
+                </h5>
+        </div>
+        <div class=d3>
+            <h3 style="font-family: 'Comic Sans MS';">
+                    <a href="../home/" class="a2"> HOME</a>
+                <a href="../blog/" class="a2"> BLOG</a>
+                <a href="../top/" class="a2"> TOP 10</a>
+                <a href="../aboutus/" class="a2"> ABOUT US</a>
+                <a href="../contactus/" class="a2"> CONTACT US</a>
+            </h3>
+        </div>
+        <br>
+    <div class="d">
+        <div style="position: absolute; top:30px; left: 50px; right: 50px; height: 220px">
+            <!--<img src="ImageLogodtu.jpg" alt="logo " width="844" height="100">-->
+            <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                <img src="{% static 'pics/hindu/hin1.jpg' %}" width="175" height="175"/>
+                <img src="{% static 'pics/hindu/hin2.jpg' %}" width="175" height="175"/>
+                <img src="{% static 'pics/hindu/hin3.jpg' %}" width="175" height="175"/>
+                <img src="{% static 'pics/hindu/hin4.jpg' %}" width="175" height="175"/>
+                <img src="{% static 'pics/hindu/hin5.jpg' %}" width="175" height="175"/>
+                <img src="{% static 'pics/hindu/hin6.jpg' %}" width="175" height="175"/>
+                <img src="{% static 'pics/hindu/hin7.jpg' %}" width="175" height="175"/>
+                <img src="{% static 'pics/hindu/hin8.jpg' %}" width="175" height="175"/>
+            </marquee>
+        </div>
+        <div class="d5" style=" top: 230px">
+         <h1 class="main1">HINDU COLLEGE <font style="color: #20231A"></font></h1>
+                    <font class="f1"><p>Hindu College is one of the most distinguished colleges in India and functions under the affiliation of University of Delhi in Delhi, India.
+                        Founded in 1899, it offers undergraduate and postgraduate courses in Science, Humanities and Social Sciences. The college is also amongst the oldest in Delhi.
+                        The alumni of Hindu College are called Hinduites. Its alumni stands tall in public esteem. All the students of Hindu College have grown up here
+                        and excelled in the chosen areas of their interests, be it academics, sports, or extra-curricular activities.Hindu College was a centre for intellectual and political debate during India’s freedom struggle, especially during the Quit India Movement. This is the only college in Delhi to have a Students’ Parliament since 1935, which in fact, provided a platform to many national leaders including Mahatma Gandhi, Motilal Nehru,
+                        Pandit Jawaharlal Nehru, Sarojini Naidu, Annie Besant, Muhammad Ali Jinnah and Subhash Chandra Bose for motivating the youth.
+                </p>
+            For more information...<a href="www.hindu.edu">Read More<span style="cursor:pointer;cursor:hand"></span></a></font>
+        </div>
+        <br>
+        <div class="d6" style="top: 230px; height: 150px;">
+            <h1 class="main1"><font class="f1"> Location</font></h1>
+            <div id="map" style="height: 130px;"></div>
+    <script>
+        function PickValue(){
+            var v="India ,Australia";
+        }
+      function initMap() {
+ var myLatLng ={lat: 28.685661, lng: 77.209240};
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: myLatLng,
+            zoom: 14
+        });
+	var marker = new google.maps.Marker({
+	    position: myLatLng,
+	    map: map,
+	    title: 'Hindu College'
+		  });
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_F_pxFhsGwZTitFcaFcUVAFGdNBD1sNg&callback=initMap">
+    </script>
+</div>
+            <div style="position: absolute;top: 450px; right: 50px; left: 625px;">
+            <h1 class="main1">HOTSPOTS</h1>
+                <img src="{% static 'pics/hindu/hin9.jpg' %}" width="350px" height="150px" style="border: white 4px solid;">
+                Irfaans: It’s a chilling point inside the college where one can get stuff to eat, especially maggi. </li>
+<li>Hudson Lane- A five minute walk from the college, Hudson Lane boasts of amazing food joints </li>
+<li>Kamla Nagar</li>
+        </div>
+        <div style="position:absolute;top:800px;right:50px;left:50px;">
+             <h1 class="main1"><font class="f1">Paying Guests (PG)</font></h1>
+       <table align="center" cellspacing="20px" cellpadding="2px" >
+           <font style="font-family: 'Comic Sans MS'">
+           <tr><td style="font-family: 'Comic Sans MS';">Owner Name</td><td style="font-family: 'Comic Sans MS';">Address</td><td style="font-family: 'Comic Sans MS';">Description</td><td style="font-family: 'Comic Sans MS';">Phone Number</td></tr>
+               {% for f in pgd %}
+                   <tr>
+                      {% for ff in f %}
+                        <td>{{ ff }}</td>
+                      {% endfor %}
+                   </tr>
+               {% endfor %}
+            </font>
+            </table>
+    </div>
+         <div style="position:absolute;top:1000px;right:50px;left:50px;">
+             <h1 class="main1"><font class="f1"> Reviews...</font></h1>
+       <table border="1px"  align="center">
+           <font style="font-family: 'Comic Sans MS'">
+           <tr><td style="font-family: 'Comic Sans MS';">Name</td><td style="font-family: 'Comic Sans MS';">Review</td><td style="font-family: 'Comic Sans MS';">Rating</td></tr>
+               <tr><td> Priya Chawla</td><td>indu College is among the top colleges in DU. It offers commerce, science and arts courses and is especially known for its faculty. The college has the feel of atypical DU college and the infrastructure is old but still in good condition. </td><td>4/5</td></tr>
+               <tr><td> </td><td></td><td></td></tr>
+               <tr><td> Delhi</td><td> alumini meet up is the best part</td><td>4.5/5</td></tr>
+            </font>
+            </table>
+    </div>
+
+    </div>
+         <div class="d8">
+            <div class="d8a">
+                <font class="f1"><h3>Images</h3>    </font>
+                <img src="{% static 'pics/1.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/3.jpg' %}" width="120" height="64">
+                <br>
+                <img src="{% static 'pics/4.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/6.jpg' %}" width="120" height="64">
+            </div>
+            <div class="d8b">
+
+                <font class="f1"><h3 style="color: #FFFFFF;">Comments</h3></font>
+                <font class="f1" style="color: white ;font-size: 0.8em; font-weight:bold;">
+                <table align="center">
+                    <tr>
+                        <td>
+                            Abhishek Vijhani
+                        </td>
+                        <td>
+                            Very Useful Website. It Helps me choose the college of my dreams.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ankit Verma
+                        </td>
+                        <td>
+                            Very Helpful Website.I wouls suggest it to my Friends.
+                        </td>
+                    </tr>
+
+                </table>
+                    </font>
+</div>
+
+
+
+            <div class="d8c">
+                <font class="f1"><h3>Ratings</h3></font>
+                <font class="f1" style="color: black ;font-size: 0.9em; font-weight:bold;" >
+                <table align="left">
+                    <tr>
+                        <td>
+                            Times of India
+                        </td>
+                        <td>
+                            4/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hindustan Times
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ABP News
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NDTV India
+                        </td>
+                        <td>
+                            4.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CNBC
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BBC News
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                </table>
+                    </font>
+            </div>
+        </div>
+        <div class="d9" style="text-align: center">
+                <font class="f1">&copy;Copyright CampusDecidee</font>
+        </div>
+    <script>
+        if(!(sessionStorage.getItem('Uname'))){
+            alert('Please Login....');
+            window.open('../login/','_self');
+        }
+        else {
+            var a = sessionStorage.getItem('Uname')
+            document.getElementById('sp1').innerHTML= a;
+        }
+    </script>
+</body>
+</html>

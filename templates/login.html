@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LogIn</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'format.css' %}">
+    <script src="{% static 'scripts/jquery-1.7.1.js' %}"></script>
+    <script src="{% static 'scripts/jquery-ui-1.10.3.custom.js' %}"></script>
+    <script>
+            if('{{ z }}' != '')
+            {alert('{{ z }}')}
+
+    </script>
+</head>
+
+<body background="{% static 'pics/magic-book.jpg' %}">
+        <div class="d1">
+                <a href="../home/"><img src="{% static 'pics/campusdecidee.jpeg' %}"  height='90px' width="1349px"/></a>
+        </div>
+        <div class=d2>
+                <h5 style="font-family: 'Comic Sans MS';text-align: right; padding-right: 3em" >
+                    <a href="../Register/" class=a1>REGISTER</a>
+                </h5>
+        </div>
+        <div class=d3>
+            <h3 style="font-family: 'Comic Sans MS';">
+                    <a href="../home/" class="a2"> HOME</a>
+                <a href="../blog/" class="a2"> BLOG</a>
+                <a href="../top/" class="a2"> TOP 10</a>
+                <a href="../aboutus/" class="a2"> ABOUT US</a>
+                <a href="../contactus/" class="a2"> CONTACT US</a>
+            </h3>
+        </div>
+        <div class="d" style="height: 610px;">
+                <div style="background-color: #212121;position: absolute; top: 50px; height: 90px; right: 50px; left: 50px; border-radius: 10px">
+            <h3 style="font-family: 'Comic Sans MS'; text-align: center;">
+                <button class="bttn1" id="btuser" style="font-size: 1.5em">USER LOGIN</button>
+                <font class="f1" style="font-size: 2em; color: azure">|</font>
+                <button class="bttn1" id="btexpert" style="font-size: 1.5em">EXPERT LOGIN</button>
+            </h3>
+        </div>
+        <div class="register" id="user">
+                <form class="form" method="post" action="../validate_user/">
+                    {% csrf_token %}
+                    <font class="f1">
+                        <h1 class="main2">LogIn</h1>
+                        <font class="f1" style="color: #212121;">Email Id :</font><br>
+                        <input type="text" name="uname" id="uname" style="width: 80%" autofocus required>
+                        <br><br>
+                        <font class="f1" style="color: #212121">Password :</font><br>
+                        <input type="password" name="upassword" id="upassword" style="width: 80%" required>
+                        <br><br>
+                        <button type="submit" class="bttn2" name="uregister" id="uregister">Login</button>
+                        <button type="reset" class="bttn2" name="Reset">Reset</button>
+                        <button class="bttn2" name="forgot" onclick="window.open('../uForgot/','_self')">Forgot Password</button>
+                    </font>
+                </form>
+        </div>
+        <div class="register" id="expert">
+                <form class="form" method="post" action="../validate_expert/">
+                    {% csrf_token %}
+                    <font class="f1">
+                        <h1 class="main2">LogIn</h1>
+                        <font class="f1" style="color: #212121;">Email Id :</font><br>
+                        <input type="text" name="ename" id="ename1" style="width: 80%" autofocus required>
+                        <br><br>
+                        <font class="f1" style="color: #212121">Password :</font><br>
+                        <input type="password" name="epassword" id="epassword1" style="width: 80%" required>
+                        <br><br>
+                        <button type="submit" class="bttn2" name="eregister" id="eregister1">Login</button>
+                        <button type="reset" class="bttn2" name="Reset">Reset</button>
+                        <button class="bttn2" name="forgot2" onclick="window.open('../eForgot/','_self')">Forgot Password</button>
+                    </font>
+                </form>
+        </div>
+        </div>
+        <br>
+        <script>
+                $("#user").show();
+                $("#expert").hide()
+
+            $("#btuser").click( function () {
+                $("#user").fadeIn();
+                $("#expert").hide();
+            });
+            $("#btexpert").click( function () {
+                $("#user").hide();
+                $("#expert").fadeIn();
+            });
+        </script>
+            <div style="background-color: #BD3900;position: absolute;  left: 200px;  top: 875px;  right: 200px;  height: 250px;">
+            <div class="d8a">
+                <font class="f1"><h3>Images</h3></font>
+                <img src="{% static 'pics/1.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/3.jpg' %}" width="120" height="64">
+                <br>
+                <img src="{% static 'pics/4.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/6.jpg' %}" width="120" height="64">
+            </div>
+            <div class="d8b">
+                <font class="f1"><h3 style="color: #FFFFFF;">Comments</h3></font>
+                <font class="f1" style="color: white ;font-size: 0.8em; font-weight:bold;">
+                <table align="center">
+                    <tr>
+                        <td>
+                            Abhishek Vijhani
+                        </td>
+                        <td>
+                            Very Useful Website. It Helps me choose the college of my dreams.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ankit Verma
+                        </td>
+                        <td>
+                            Very Helpful Website.I wouls suggest it to my Friends.
+                        </td>
+                    </tr>
+
+                </table>
+                </font>
+            </div>
+            <div class="d8c">
+                <font class="f1"><h3>Ratings</h3></font>
+                <font class="f1" style="color: black ;font-size: 0.9em; font-weight:bold;" >
+                <table align="left">
+                    <tr>
+                        <td>
+                            Times of India
+                        </td>
+                        <td>
+                            4/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hindustan Times
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ABP News
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NDTV India
+                        </td>
+                        <td>
+                            4.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CNBC
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BBC News
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                </table>
+                    </font>
+            </div>
+        </div>
+        <div style=" background-color: #E76A30;  position: absolute; bottom: 10px; top: 1120px;  height: 30px; padding-right: 1em;  left:0px; right: 0px; text-align: center">
+                <font class="f1">&copy;Copyright CampusDecidee</font>
+        </div>
+</body>
+</html>

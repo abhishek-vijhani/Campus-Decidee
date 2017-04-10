@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'format.css' %}">
+    <script src="{% static 'scripts/jquery-1.7.1.js' %}"></script>
+    <script src="{% static 'scripts/jquery-ui-1.10.3.custom.js' %}"></script>
+    <script>
+        function func1()
+        {
+            var c=document.getElementById("password1").value
+            var d=document.getElementById("cpassword1").value
+            if (c == d)
+            {
+                window.open("../register_user?nm="+document.getElementById('name1').value+"&phn="+document.getElementById('phone').value+ "&db="+document.getElementById('dob').value+"&em="+document.getElementById('email1').value+"&pss="+document.getElementById('password1').value+"&cpss="+document.getElementById('cpassword1').value,'_self');
+            }
+            else
+            {
+                alert('Password Does not Match')
+            }
+        }
+        function func2()
+        {
+            var a=document.getElementById("password2").value
+            var b=document.getElementById("cpassword2").value
+            if (a == b)
+            {
+                window.open("../register_expert?nm="+document.getElementById('name2').value+"&phn="+document.getElementById('phone2').value+"&ql="+document.getElementById('qual').value+"&em="+document.getElementById('email2').value+"&pss="+document.getElementById('password2').value+"&cps="+document.getElementById('cpassword2').value+"&exp1="+document.getElementById('exp').value,'_self');
+            }
+            else
+            {
+                alert('Password Does not Match')
+            }
+}
+</script>
+</head>
+<body background="{% static 'pics\magic-book.jpg' %}">
+        <div class="d1">
+               <a href="../home/"><img src="{% static 'pics/campusdecidee.jpeg' %}"  height='90px' width="1349px"/></a>
+        </div>
+        <div class=d2>
+                <h5 style="font-family: 'Comic Sans MS';text-align: right; padding-right:3em">
+                    <a href="../login/" class=a1>LOGIN</a>
+                </h5>
+        </div>
+        <div class=d3>
+            <h3 style="font-family: 'Comic Sans MS';">
+                    <a href="../home/" class="a2"> HOME</a>
+                <a href="../blog/" class="a2"> BLOG</a>
+                <a href="../top/" class="a2"> TOP 10</a>
+                <a href="../aboutus/" class="a2"> ABOUT US</a>
+                <a href="../contactus/" class="a2"> CONTACT US</a>
+            </h3>
+        </div>
+        <br>
+        <div class="d" style="height: 1000px;">
+        <div style="background-color: #212121;position: absolute; top: 50px; height: 90px; right: 50px; left: 50px; border-radius: 10px">
+            <h3 style="font-family: 'Comic Sans MS'; text-align: center; ">
+                <button class="bttn1" id="btuser" style="font-size: 1.5em">USER</button>
+                <font class="f1" style="font-size: 2em; color: azure">|</font>
+                <button class="bttn1" id="btexpert" style="font-size: 1.5em">EXPERT</button>
+                <font class="f1" style="font-size: 2em; color: azure;">|</font>
+                <button class="bttn1" id="btpg" style="font-size: 1.5em">PAYING GUEST</button>
+            </h3>
+        </div>
+        <br>
+        <div class="register" id="user1">
+                <form class="form" method="post">
+                    {% csrf_token %}
+                    <font class="f1">
+                        <h1 class="main2">User <font style="color: #20231A">Registration</font></h1>
+                        <font class="f1" style="color: #212121;">Name :</font><br>
+                        <input type="text" name="dname" id="name1" style="width: 80%" autofocus required oninvalid="setCustomValidity('Full name is required')" oninput="setCustomValidity('')" autocomplete="off" placeholder="Enter Full name">
+                        <br><br>
+                        <font class="f1" style="color: #212121;">Phone Number :</font><br>
+                        <input type="integer" name="dphn" id="phone" style="width: 80%"  required maxlength="10">
+                        <br><br>
+                        <font class="f1" style="color: #212121;">Date Of Birth :</font><br>
+                        <input type="date" name="ddob" id="dob" style="width: 80%"  required>
+                        <br><br>
+                        <font class="f1" style="color: #212121">Email :</font><br>
+                        <input type="text" name="demail" id="email1" style="width: 80%" required oninvalid="setCustomValidity('User name is required')" oninput="setCustomValidity('')" autocomplete="off" placeholder="Enter e-mail ID">
+                        <br><br>
+                        <font class="f1" style="color: #212121">Password :</font><br>
+                        <input type="password" name="password" id="password1" style="width: 80%" required oninvalid="setCustomValidity('Password name is required and password must be 6-15 digits.')" oninput="setCustomValidity('')" placeholder="Enter password" min="6" maxlength="15">
+                        <br><br>
+                        <font class="f1" style="color: #212121">Confirm Password :</font><br>
+                        <input type="password" name="cpassword" id="cpassword1" style="width: 80%" required oninvalid="setCustomValidity('Please re-enter password')" oninput="setCustomValidity('')" placeholder="Re-enter password">
+                        <br><br>
+                        <button type="button" name="ureg" id="register1" class="bttn2" value="Register" onclick="func1()">Register</button>
+                        <button type="reset" class="bttn2" name="Reset" value="Reset">Reset</button>
+                    </font>
+                </form>
+        </div>
+        <div class="register" id="expert1">
+                <form class="form" method="post">
+                    {% csrf_token %}
+                    <font class="f1">
+                        <h1 class="main2">Expert <font style="color: #20231A">Registration</font></h1>
+                        <font class="f1" style="color: #212121;">Name :</font><br>
+                        <input type="text" name="ename" id="name2" style="width: 80%" autofocus required oninvalid="setCustomValidity('Full name is required')" oninput="setCustomValidity('')" autocomplete="off" placeholder="Enter Full name">
+                        <br><br>
+                        <font class="f1" style="color: #212121">Phone Number :</font><br>
+                        <input type="text" name="ephn" id="phone2" style="width: 80%" required maxlength="10">
+                        <br><br>
+                        <font class="f1" style="color: #212121">Qualifications :</font><br>
+                        <textarea name="equal" id="qual" rows="4" cols="70" placeholder="Enter Qualifications" required></textarea>
+                        <br><br>
+                        <font class="f1" style="color: #212121">Experience :</font><br>
+                        <textarea name="eexp" id="exp" rows="4" cols="70" placeholder="Enter Experiences" required></textarea>
+                        <br><br>
+                        <font class="f1" style="color: #212121">Email :</font><br>
+                        <input type="text" name="eemail" id="email2" style="width: 80%" required oninvalid="setCustomValidity('User name is required')" oninput="setCustomValidity('')" autocomplete="off" placeholder="Enter e-mail ID">
+                        <br><br>
+                        <font class="f1" style="color: #212121">Password :</font><br>
+                        <input type="password" name="epassword" id="password2" style="width: 80%" required oninvalid="setCustomValidity('Password name is required and password must be 6-15 digits.')" oninput="setCustomValidity('')" placeholder="Enter password" min="6" maxlength="15">
+                        <br><br>
+                        <font class="f1" style="color: #212121">Confirm Password :</font><br>
+                        <input type="password" name="cpassword" id="cpassword2" style="width: 80%" required oninvalid="setCustomValidity('Please re-enter password')" oninput="setCustomValidity('')" placeholder="Re-enter password">
+                        <br><br>
+                        <button type="button" class="bttn2" name="ereg" id="register2" value="Register" onclick="func2()">Register</button>
+                        <button type="reset" class="bttn2" name="Reset" value="Reset">Reset</button>
+                    </font>
+                </form>
+        </div>
+        <div class="register" id="pg1">
+                  <form class="form" method="post" action="../register_pg/">
+                    {% csrf_token %}
+                    <font class="f1">
+                        <h1 class="main2">Paying Guest <font style="color: #20231A">Registration</font></h1>
+                        <font class="f1" style="color: #212121">Owner Name :</font><br>
+                        <input type="text" name="oname" id="name3" style="width: 80%" autofocus required oninvalid="setCustomValidity('Full name is required')" oninput="setCustomValidity('')" autocomplete="off" placeholder="Enter Full name">
+                        <br><br>
+                        <font class="f1" style="color: #212121">Phone Number :</font><br>
+                        <input type="integer" name="ophn" id="Phn" style="width: 80%" required maxlength="10">
+                        <br><br>
+                        <font class="f1" style="color: #212121">PG Address :</font><br>
+                        <textarea id="add" name="oadd" rows="4" cols="70" placeholder="Address" required></textarea>
+                        <br><br>
+                        <font class="f1" style="color: #212121">Nearby College :</font><br>
+                        <select name="optn" required>
+                            <option>Delhi Technological University</option>
+                            <option>Jagan Institute of Management Studies</option>
+                            <option>Vivekananda Institute of Profesional Studies</option>
+                            <option>Maharaja Agrasen Institute of Technology</option>
+                            <option>Maharaja Surajmal Institute of Technology</option>
+                            <option>St. Stephens College</option>
+                            <option>Bharti Vidyapeeth</option>
+                            <option>Hindu College</option>
+                            <option>Shri Venkateshwara College</option>
+                            <option>Shri Ram College of Commerce</option>
+                        </select>
+                        <br><br>
+                        <font class="f1" style="color: #212121">Email :</font><br>
+                        <input type="text" name="oemail" id="email3" style="width: 80%" required oninvalid="setCustomValidity('User name is required')" oninput="setCustomValidity('')" autocomplete="off" placeholder="Enter e-mail ID">
+                        <br><br>
+                        <font class="f1" style="color: #212121">Price & Description :</font><br>
+                        <textarea id="pd" name="opnd" rows="4" cols="70" placeholder="Description" required></textarea>
+                        <br><br>
+                        <button class="bttn2" name="preg" id="register3">Register</button>
+                        <button type="reset" class="bttn2" name="Reset">Reset</button>
+                    </font>
+                </form>
+        </div>
+        </div>
+        <script>
+
+                $("#user1").show();
+                $("#expert1").hide()
+                $("#pg1").hide();
+
+
+            $("#btuser").click( function () {
+                $("#user1").fadeIn();
+                $("#expert1").hide();
+                $("#pg1").hide();
+            });
+            $("#btexpert").click( function () {
+                $("#user1").hide();
+                $("#expert1").fadeIn();
+                $("#pg1").hide();
+            });
+            $("#btpg")      .click( function () {
+                $("#user1").hide();
+                $("#expert1").hide();
+                $("#pg1").fadeIn();
+            });
+        </script>
+        <div class="d8" style="top: 1265px">
+            <div class="d8a">
+                <font class="f1"><h3>Images</h3></font>
+                <img src="{% static 'pics/1.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/3.jpg' %}" width="120" height="64">
+                <br>
+                <img src="{% static 'pics/4.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/6.jpg' %}" width="120" height="64">
+            </div>
+            <div class="d8b">
+                <font class="f1"><h3 style="color: #FFFFFF;">Comments</h3></font>
+                <font class="f1" style="color: white ;font-size: 0.8em; font-weight:bold;">
+                <table align="center">
+                    <tr>
+                        <td>
+                            Abhishek Vijhani
+                        </td>
+                        <td>
+                            Very Useful Website. It Helps me choose the college of my dreams.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ankit Verma
+                        </td>
+                        <td>
+                            Very Helpful Website.I wouls suggest it to my Friends.
+                        </td>
+                    </tr>
+
+                </table>
+                </font>
+            </div>
+            <div class="d8c">
+                <font class="f1"><h3>Ratings</h3></font>
+                <font class="f1" style="color: black ;font-size: 0.9em; font-weight:bold;" >
+                <table align="left">
+                    <tr>
+                        <td>
+                            Times of India
+                        </td>
+                        <td>
+                            4/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hindustan Times
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ABP News
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NDTV India
+                        </td>
+                        <td>
+                            4.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CNBC
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BBC News
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                </table>
+                    </font>
+            </div>
+        </div>
+        <div class="d9" style="top: 1510px; text-align: center">
+                <font class="f1" >&copy;Copyright CampusDecidee</font>
+        </div>
+
+</body>
+</html>

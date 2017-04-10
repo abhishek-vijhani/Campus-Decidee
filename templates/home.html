@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campus Decidee</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'format.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css' %}"/>
+    <script src="{% static 'scripts/jquery-1.7.1.js' %}"></script>
+    <script src="{% static 'scripts/jquery-ui-1.10.3.custom.js' %}"></script>
+	<script type="text/javascript" src="{%static  'engine1/jquery.js'%}"></script>
+    <script>
+        $(document).ready(function () {
+            if('{{ x }}')
+            {
+                sessionStorage.removeItem('Uname');
+            }
+            if('{{ m }}')
+            {
+                var v = '{{ m }}';
+                sessionStorage.setItem('Uname',v);
+                document.getElementById('sp1').innerHTML = v;
+            }
+            else if(!(sessionStorage.getItem('Uname')))
+            {
+             $("#d2a").show();
+             $("#d2b").hide();
+            }
+            else if(sessionStorage.getItem('Uname')){
+                var a = sessionStorage.getItem('Uname');
+                document.getElementById('sp1').innerHTML = a;
+             $("#d2b").show();
+             $("#d2a").hide();
+            }
+
+
+        });
+
+        if('{{ alert }}')
+        {
+            alert('{{ alert }}')
+        }
+        if('{{ msg }}')
+        {
+            alert('{{ msg }}')
+        }
+        if('{{ psswd }}')
+        {
+            alert('{{ psswd }}')
+        }
+    </script>
+</head>
+<body background="{%static 'pics/magic-book.jpg' %}">
+        <div class="d1">
+                <a href="../home/"><img src="{% static 'pics/campusdecidee.jpeg' %}"  height='90px' width="1349px"/></a>
+        </div>
+        <div class=d2 id="d2a">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right;">
+                    <a href="../login/" class=a1>LOGIN</a>
+                    <a href="../Register/" class=a1>REGISTER </a>
+                </h5>
+        </div>
+        <div class=d2 id="d2b">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right;">
+                    <font style="font-size: 1.5em;">Hello, <span ID="sp1"> </span></font>
+                    <a href="../logout/" class=a1>LogOut </a>
+                </h5>
+        </div>
+        <div class=d3>
+            <h3 style="font-family: 'Comic Sans MS';">
+                    <a href="../home/" class="a2"> HOME</a>
+                <a href="../blog/" class="a2"> BLOG</a>
+                <a href="../top/" class="a2"> TOP 10</a>
+                <a href="../aboutus/" class="a2"> ABOUT US</a>
+                <a href="../contactus/" class="a2"> CONTACT US</a>
+            </h3>
+        </div>
+        <br>
+        <div class="d">
+        <div class="d4">
+            <div id="wowslider-container1">
+	<div class="ws_images">
+		<ul>
+        <li><img src="{% static 'pics\Bharti Vidyapeeth.jpg'%}" alt="Bharti Vidyapeeth" title="Bharti Vidyapeeth" id="wows1_0"/></li>
+        <li><img src="{% static 'pics\Delhi Technological University.jpg'%}" alt="Delhi Technological University" title="Delhi Technological University" id="wows1_1"/></li>
+        <li><img src="{% static  'pics\Indian Institute of Management.jpg'%}" alt="Indian Institute of Management" title="Indian Institute of Management" id="wows1_2"/></li>
+        <li><img src="{% static  'pics\Indian Institute of Technology.jpg'%}" alt="Indian Institute of Technology" title="Indian Institute of Technology" id="wows1_3"/></li>
+        <li><img src="{% static  'pics\Jagan Institute of Management Studies.jpg'%}" alt="Jagan Institute of Management Studies" title="Jagan Institute of Management Studies" id="wows1_4"/></li>
+        <li><img src="{% static 'pics\SRCC.jpg'%}" alt="SRCC" title="SRCC" id="wows1_5"/></li>
+        </ul>
+		</div>
+		<div class="ws_bullets">
+		<div>
+            <a href="#" title="Bharti Vidyapeeth">
+			<img src="{%static 'pics\Bharti Vidyapeeth.jpg'%}" alt="Bharti Vidyapeeth"/>1</a>
+			<a href="#" title="Delhi Technological University">
+			<img src="{%static 'pics\Delhi Technological University.jpg'%}" alt="Delhi Technological University"/>2</a>
+			<a href="#" title="Indian Institute of Management">
+			<img src="{%static  'pics\Indian Institute of Management.jpg'%}" alt="Indian Institute of Management"/>3</a>
+            <a href="#" title="Indian Institute of Technology">
+			<img src="{%static  'pics\Indian Institute of Technology.jpg'%}" alt="Indian Institute of Technology"/>4</a>
+			<a href="#" title="Jagan Institute of Management Studies">
+			<img src="{%static  'pics\Jagan Institute of Management Studies.jpg'%}" alt="Jagan Institute of Management Studies"/>5</a>
+			<a href="#" title="SRCC">
+			<img src="{% static 'pics\SRCC.jpg'%}" alt="SRCC"/>6</a>
+			</div>
+			</div>
+		<div class="ws_shadow"></div>
+		</div>
+        </div>
+        <div class="d5">
+            <h1 class="main1">The Campus <font style="color: #20231A">Decidee</font></h1>
+            <br>
+            <font class="f1"><h3 style="color: #212121;">About website</h3>
+                <p style="color: #482E2D;">
+                    This is our website about campus related informations for the students and freshers.
+                    Students will be able to get info about every thing they want about the colleges and
+                    the Universities they want to be a part of...
+                </p>
+                <br>
+                <a href="../about/" class="a5">Read More</a><font style="color: #482E2D">| July 2, 2016</font>
+            </font>
+        </div>
+        <div class="d6">
+            <h1 class="main2">Latest News<font style="color: #20231A"> Links</font></h1>
+            <marquee direction="up" onmouseover="this.stop()" onmouseout="this.start()">
+                <font class="f1" style="font-size: 0.67em;">
+                <a class="a4" href="http://www.hindustantimes.com/delhi/delhi-university-colleges-may-see-0-25-2-percentage-point-dip-in-fourth-cutoff-list/story-rmjKdjCuiiYeJrZkmeCePK.html">DU colleges may see 0.25-2 percentage point dip in 4th cutoff list</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/video/news/news/delhi-university-cut-offs-not-at-100-per-cent-but-still-high-421957">Delhi University Cut-Offs Not At 100 Per Cent But Still High</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/video/mindspace/heads-up/mission-admission-to-delhi-university-begins-422015">Mission Admission To Delhi University Begins</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/delhi-news/delhi-university-admissions-students-turn-to-helpdesks-for-filing-forms-1418182">Delhi University Admissions: Students Turn To Helpdesks For Filing Forms</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/delhi-news/delhi-university-colleges-to-open-their-computer-labs-for-admission-seekers-1414928">Delhi University Colleges To Open Their Computer Labs For Admission Seekers</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/delhi-news/kejriwal-government-decides-to-go-with-uniform-medical-entrance-exam-neet-1408864">Kejriwal Government Decides To Go With Central Medical Exam NEET</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/delhi-news/over-22-colleges-in-delhi-university-running-without-principals-1320031">Over 22 Colleges In Delhi University Running Without Principals</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/delhi-news/delhi-university-releases-2ndcut-off-list-drop-in-marks-in-few-courses-1427973">Delhi University Releases Second Cut-Off List; Drop In Marks In Few Courses</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/delhi-news/delhi-university-portal-crashes-on-day-1-of-admissions-chaos-in-colleges-1426623">Delhi University Portal Crashes On Day 1 Of Admissions, Chaos In Colleges</a><br><br>
+                <a class="a4" href="http://www.ndtv.com/delhi-news/rollback-of-ip-university-fee-hike-by-today-says-arvind-kejriwal-1285175">Rollback Of IP University Fee Hike By Today, Says Arvind Kejriwal</a>
+                </font>
+            </marquee>
+        </div>
+        <div class="d7">
+            <h1 class="main2">Top 10<font style="color: #20231A"> Colleges</font></h1>
+            <font class="f1">
+                <a href="../DTU/" class="a4">Delhi Technological University</a>
+                <img src="{% static 'logos/DTU,_Delhi_official_logo.png' %}" class="i2" align="right"><br><br>
+                <a href="../JIMS/" class="a4">Jagan Institute of Management Studies</a>
+                <img src="{% static 'logos/jims.jpg' %}" class="i2" align="right"style="background-color: #FFFFFF"><br><br>
+                <a href="../VIPS/" class="a4">Vivekananda Institute of Professional Studies</a>
+                <img src="{% static 'logos/Vivekananda_Institute_of_Professional_Studies.jpg' %}" class="i2" align="right" style="background-color: #FFFFFF"><br><br>
+                <a href="../top/" class="a5">Read More</a><font style="color: #482E2D">| July 2, 2016</font>
+            </font>
+        </div>
+        </div>
+        <div class="d8">
+            <div class="d8a">
+                <font class="f1"><h3>Images</h3></font>
+                <img src="{% static 'pics/1.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/3.jpg' %}" width="120" height="64">
+                <br>
+                <img src="{% static 'pics/4.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/6.jpg' %}" width="120" height="64">
+            </div>
+            <div class="d8b">
+                <font class="f1"><h3 style="color: #FFFFFF;">Comments</h3></font>
+                <font class="f1" style="color: white ;font-size: 0.8em; font-weight:bold;">
+                <table align="center">
+                    <tr>
+                        <td>
+                            Abhishek Vijhani
+                        </td>
+                        <td>
+                            Very Useful Website. It Helps me choose the college of my dreams.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ankit Verma
+                        </td>
+                        <td>
+                            Very Helpful Website.I wouls suggest it to my Friends.
+                        </td>
+                    </tr>
+
+                </table>
+                </font>
+            </div>
+            <div class="d8c">
+                <font class="f1"><h3>Ratings</h3></font>
+                <font class="f1" style="color: black ;font-size: 0.9em; font-weight:bold;" >
+                <table align="left">
+                    <tr>
+                        <td>
+                            Times of India
+                        </td>
+                        <td>
+                            4/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hindustan Times
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ABP News
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NDTV India
+                        </td>
+                        <td>
+                            4.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CNBC
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BBC News
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                </table>
+                    </font>
+            </div>
+        </div>
+        <div class="d9" style="text-align: center">
+            <footer>
+                <font class="f1">&copy;Copyright CampusDecidee</font>
+            </footer>
+        </div>
+        <script type="text/javascript" src="{% static 'engine1/wowslider.js' %}"></script>
+		<script type="text/javascript" src="{% static 'engine1/script.js' %}"></script>
+</body>
+</html>

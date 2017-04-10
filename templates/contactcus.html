@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'format.css' %}">
+    <script src="{% static 'scripts/jquery-1.7.1.js' %}"></script>
+    <script src="{% static 'scripts/jquery-ui-1.10.3.custom.js' %}"></script>
+
+</head>
+<body background="{% static 'pics\magic-book.jpg' %}">
+        <div class="d1">
+                <a href="../home/"><img src="{% static 'pics/campusdecidee.jpeg' %}"  height='90px' width="1349px"/></a>
+        </div>
+        <div class=d2 id="d2a">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right">
+                    <a href="../login/" class=a1>LOGIN</a>
+                    <a href="../Register/" class=a1>REGISTER </a>
+                </h5>
+        </div>
+        <div class=d2 id="d2b">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right;">
+                    <font style="font-size: 1.5em;">Hello, <span ID="sp1"> </span></font>
+                    <a href="../logout/" class=a1>LogOut </a>
+                </h5>
+        </div>
+        <div class=d3>
+            <h3 style="font-family: 'Comic Sans MS';">
+                    <a href="../home/" class="a2"> HOME</a>
+                <a href="../blog/" class="a2"> BLOG</a>
+                <a href="../top/" class="a2"> TOP 10</a>
+                <a href="../aboutus/" class="a2"> ABOUT US</a>
+                <a href="../contactus/" class="a2"> CONTACT US</a>
+            </h3>
+        </div>
+        <div class="d" style="height:600px">
+            <div style="position: absolute;  left: 100px;  top: 80px;  right: 100px;">
+                <div class="d5a">
+                <h1 class="main1">Contact<font style="color: #20231A"> Us</font></h1>
+                <form method="post" action="../saveContact/">
+                    {% csrf_token %}
+                <font class="f1" id="f1" style="color: #482E2D">
+                <p style="color: #482E2D; padding-left: 10px; padding-right: 10px">
+                    Please enter your details if you want us to contact you regarding any query/suggestion/recomendation.<br><br>
+                    <table align="center">
+                    <tr>
+                        <td>Name:</td>
+                        <td><input type="text" id="cname" name="cname"></td>
+                    </tr>
+                    <tr>
+                        <td>Email ID:</td>
+                        <td><input type="text" id="ceid" name="cemail"></td>
+                    </tr>
+                    <tr>
+                        <td>Phone Number:</td>
+                        <td><input type="integer" id="cphno" name="cphn"></td>
+                    </tr>
+                    <tr>
+                        <td>Query:</td>
+                        <td><textarea name="cqry" id="txt1" rows="5" cols="30"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button id="cbtn" class="bttn2">Submit</button>&nbsp;&nbsp;<button type="reset" class="bttn2">Reset</button></td>
+                    </tr>
+                </table>
+                </p>
+                </font>
+                </form>
+            </div>
+                <div class="d6a">
+                <font class="f1" id="f1" style="color: #482E2D">
+                <p style="color: #482E2D; padding-left: 10px; padding-right: 10px">
+                    <h3>Location One</h3>
+            Campus Deciee Office <br />
+            Jims, Sector-5<br/>
+            New Delhi, India<br /><br />
+			<strong>Phone:</strong> 098-99-485-900/099-53-307-744<br />
+            <strong>Email:</strong> <a href="mailto:contact@company.in">services@campusdecidee.in</a> <br />
+            <div class="cleaner divider"></div>
+
+			<div class="cleaner h30"></div>
+
+            <h3>Location Two</h3>
+            Campus Decidee Dream World<br />
+            JIMS, Sector-5<br />
+            New Delhi, India<br /><br />
+			<strong>Phone:</strong> 099-99-213-212/099-53-307-744<br />
+            <strong>Email:</strong> <a href="mailto:contact@company.in">services@campusdecidee.in</a> <br />
+                </p>
+                </font>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="d8" style="top:860px">
+            <div class="d8a">
+                <font class="f1"><h3>Images</h3></font>
+                <img src="{% static 'pics/1.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/3.jpg' %}" width="120" height="64">
+                <br>
+                <img src="{% static 'pics/4.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/6.jpg' %}" width="120" height="64">
+            </div>
+            <div class="d8b">
+                <font class="f1"><h3 style="color: #FFFFFF;">Comments</h3></font>
+                <font class="f1" style="color: white ;font-size: 0.8em; font-weight:bold;">
+                <table align="center">
+                    <tr>
+                        <td>
+                            Abhishek Vijhani
+                        </td>
+                        <td>
+                            Very Useful Website. It Helps me choose the college of my dreams.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ankit Verma
+                        </td>
+                        <td>
+                            Very Helpful Website.I wouls suggest it to my Friends.
+                        </td>
+                    </tr>
+
+                </table>
+                </font>
+            </div>
+            <div class="d8c">
+                <font class="f1"><h3>Ratings</h3></font>
+                <font class="f1" style="color: black ;font-size: 0.9em; font-weight:bold;" >
+                <table align="left">
+                    <tr>
+                        <td>
+                            Times of India
+                        </td>
+                        <td>
+                            4/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hindustan Times
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ABP News
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NDTV India
+                        </td>
+                        <td>
+                            4.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CNBC
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BBC News
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                </table>
+                    </font>
+            </div>
+        </div>
+         <div class="d9" style="top:1100px; text-align: center">
+                <font class="f1" >&copy; Copyright CampusDecidee</font>
+        </div>
+    <script>
+        if(!(sessionStorage.getItem('Uname')))
+        {
+            $("#d2a").show()
+            $("#d2b").hide()
+        }
+        else {
+
+            $("#d2a").hide()
+            var a = sessionStorage.getItem('Uname')
+            document.getElementById('sp1').innerHTML= a;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ask Expert</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'format.css' %}">
+    <script src="{% static 'scripts/jquery-1.7.1.js' %}"></script>
+    <script src="{% static 'scripts/jquery-ui-1.10.3.custom.js' %}"></script>
+    <script>
+        if(!(sessionStorage.getItem('Uname'))){
+            alert('Please Login....');
+            window.open('../login/','_self');
+        }
+
+        $(document).ready(function () {
+            $("#rdiv2").hide();
+            $("#rdiv1").show();
+        });
+
+        $("#sbmt").click(function () {
+            $("#rdiv2").hide();
+            $("#rdiv1").show();
+        });
+        </script>
+</head>
+<body background="{% static 'pics\magic-book.jpg' %}">
+        <div class="d1">
+                <a href="../home/"><img src="{% static 'pics/campusdecidee.jpeg' %}"  height='90px' width="1349px"/></a>
+        </div>
+       <!-- <div class=d2 id="d2a">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right">
+                    <a href="../login/" class=a1>LOGIN</a>
+                    <a href="../Register/" class=a1>REGISTER </a>
+                </h5>
+        </div>-->
+        <div class=d2 id="d2b">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right;">
+                    <font style="font-size: 1.5em;">Hello, <span ID="sp1"> </span></font>
+                    <a href="../logout/" class=a1>LogOut </a>
+                </h5>
+        </div>
+        <div class=d3>
+            <h3 style="font-family: 'Comic Sans MS';">
+                    <a href="../home/" class="a2"> HOME</a>
+                <a href="../blog/" class="a2"> BLOG</a>
+                <a href="../top/" class="a2"> TOP 10</a>
+                <a href="../aboutus/" class="a2"> ABOUT US</a>
+                <a href="../contactus/" class="a2"> CONTACT US</a>
+            </h3>
+        </div>
+        <div class="d">
+            <div id="qnr" style="position: absolute;  left: 100px;  top: 80px;  right: 100px;">
+                <h1 class="main1">Expert<font style="color: #20231A"> Reply</font></h1>
+                <br>
+                <button type="button" class="qbttn" id="bt2">
+                        <font class="f1">
+                            What's Your Suggesstion
+                        </font>
+                </button>
+                <div id="rdiv2" style="position: absolute; left: 100px; top: 200px; right: 100px;">
+                    <form method="post" action="../saveReply/">
+                        {% csrf_token %}
+                        <h3><font class="f1">What's Your Reply:</font></h3>
+                        <font class="f1" style="color: #212121" >Email :</font><br>
+                        <input name="eemail" type="text" placeholder="Email" autofocus required style="width: 80%" ><br><br>
+                        <font class="f1" style="color: #212121">Reply :</font><br>
+                        <textarea name="reply" id="expreply" rows="4" cols="100" required placeholder="Enter Your Reply"></textarea><br>
+                        <input type="hidden" name="query" value="{{ abc }}">
+                        <button id="sbmt" type="submit" class="bttn2">Submit Reply</button>
+                        <button type="reset" class="bttn2">Reset</button>
+                    </form>
+                </div>
+                <div id="rdiv1" style="position: absolute; left: 100px; top: 200px; right: 100px;">
+                    {% for f in abc %}
+                        <font class="f1" style="color: #212121; font-size: 1.25em">Query:
+                            <table id="t1">
+                                {% for ff in f %}
+                                    <tr><td>{{ ff }}</td></tr>
+                                {% endfor %}
+                            </table>
+                            <br>
+                        </font>
+                    {% endfor %}
+                    <font class="f1"><h3> REPLIES:</h3></font><br>
+                    <div style="postion: absolute; left: 100px; right: 100px;">
+                        {% for f in reply %}
+                            <font class="f1" style="color: #212121">
+                            <table>
+                                {% for ff in f %}
+                                    <tr><td>{{ ff }}</td></tr>
+                                {% endfor %}
+                            </table>
+                            <br><br>
+                            </font>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#bt2").click(function () {
+            var a = sessionStorage.getItem('Uname')
+            if ('{{ em }}' == 1) {
+                $("#rdiv2").fadeIn();
+                $("#rdiv1").hide();
+            }
+            else
+            {
+                $("#rdiv2").hide()
+                $("#rdiv1").show()
+                alert('Only For Experts!!!')
+            }
+        });
+        </script>
+        <div class="d8">
+            <div class="d8a">
+                <font class="f1"><h3>Images</h3></font>
+                 <img src="{% static 'pics/1.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/3.jpg' %}" width="120" height="64">
+                <br>
+                <img src="{% static 'pics/4.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/6.jpg' %}" width="120" height="64">
+            </div>
+            <div class="d8b">
+                <font class="f1"><h3 style="color: #FFFFFF;">Comments</h3></font>
+                <font class="f1" style="color: white ;font-size: 0.8em; font-weight:bold;">
+                <table align="center">
+                    <tr>
+                        <td>
+                            Abhishek Vijhani
+                        </td>
+                        <td>
+                            Very Useful Website. It Helps me choose the college of my dreams.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ankit Verma
+                        </td>
+                        <td>
+                            Very Helpful Website.I wouls suggest it to my Friends.
+                        </td>
+                    </tr>
+
+                </table>
+                </font>
+            </div>
+            <div class="d8c">
+                <font class="f1"><h3>Ratings</h3></font>
+                <font class="f1" style="color: black ;font-size: 0.9em; font-weight:bold;" >
+                <table align="left">
+                    <tr>
+                        <td>
+                            Times of India
+                        </td>
+                        <td>
+                            4/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hindustan Times
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ABP News
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NDTV India
+                        </td>
+                        <td>
+                            4.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CNBC
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BBC News
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                </table>
+                    </font>
+            </div>
+        </div>
+        <div class="d9" style="text-align: center">
+                <font class="f1">&copy; Copyright CampusDecidee</font>
+        </div>
+    <script>
+        if(!(sessionStorage.getItem('Uname'))){
+            alert('Please Login....');
+            window.open('../login/','_self');
+        }
+        else {
+            var a = sessionStorage.getItem('Uname')
+            document.getElementById('sp1').innerHTML= a;
+
+        }
+    </script>
+</body>
+</html>

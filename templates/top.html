@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Toppers</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'format.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'engine1/style.css' %}" />
+	<script type="text/javascript" src="{% static 'engine1/jquery.js' %}"></script>
+
+</head>
+
+
+<body background="{% static 'pics\magic-book.jpg' %}">
+        <div class="d1">
+                <a href="../home/"><img src="{% static 'pics/campusdecidee.jpeg' %}"  height='90px' width="1349px"/></a>
+        </div>
+        <div class=d2 id="d2a">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right">
+                    <a href="../login/" class=a1>LOGIN</a>
+                    <a href="../Register/" class=a1>REGISTER </a>
+                </h5>
+        </div>
+        <div class=d2 id="d2b">
+                <h5 style="font-family: 'Comic Sans MS';text-align: right;">
+                    <font style="font-size: 1.5em;">Hello, <span ID="sp1"> </span></font>
+                    <a href="../logout/" class=a1>LogOut </a>
+                </h5>
+        </div>
+        <div class=d3>
+            <h3 style="font-family: 'Comic Sans MS';">
+                    <a href="../home/" class="a2"> HOME</a>
+                <a href="../blog/" class="a2"> BLOG</a>
+                <a href="../top/" class="a2"> TOP 10</a>
+                <a href="../aboutus/" class="a2"> ABOUT US</a>
+                <a href="../contactus/" class="a2"> CONTACT US</a>
+            </h3>
+        </div>
+        <br>
+        <div class="d">
+        <div style="position: absolute; top: 20px; left: 120px; right: 120px; height: 280px ">
+            <img src="{% static 'pics/yourstory-education.jpg' %}" height="280px" width="800px">
+
+        </div>
+        <div class="dtop">
+            <h1 class="main2">The Topper's<font style="color: #20231A"> List</font></h1>
+            <font class="f1">
+                <li><a href="../DTU/" class="a4">Delhi Technological University</a>
+                <img src="{% static 'logos/DTU,_Delhi_official_logo.png' %}" class="i2" align="right"></li><br><br>
+                <li><a href="../JIMS/" class="a4">Jagan Institute of Management Studies</a>
+                <img src="{% static 'logos/jims.jpg' %}" class="i2" align="right"style="background-color: #FFFFFF"></li><br><br>
+                <li><a href="../VIPS/" class="a4">Vivekananda Institute of Professional Studies</a>
+                <img src="{% static 'logos/Vivekananda_Institute_of_Professional_Studies.jpg' %}" class="i2" align="right" style="background-color: #FFFFFF"></li><br><br>
+                <li><a href="../BVP/" class="a4">Bharti Vidyapeeth University</a>
+                <img src="{% static 'logos/121203050709_Bharti%20logo.png' %}" class="i2" align="right" style="background-color: #FFFFFF"></li><br><br>
+                <li><a href="../MAIT/" class="a4">Maharaja Agrasen Institue of Technology</a>
+                <img src="{% static 'logos/MaharajaAgrasenInstituteofTechnology.jpg' %}" class="i2" align="right" style="background-color: #FFFFFF"></li><br><br>
+                <li><a href="../MSIT/" class="a4">Maharaja Surajmal Institute of Technology</a>
+                <img src="{% static 'logos/MSIT logo.png' %}" class="i2" align="right" style="background-color: #FFFFFF"></li><br><br>
+                <li><a href="../SVC/" class="a4">Shri Venkateshwara college</a>
+                <img src="{% static 'logos/College-Logo1.png' %}" class="i2" align="right" style="background-color: #FFFFFF"></li><br><br>
+                <li><a href="../SSC/" class="a4">St. Stephens's College</a>
+                <img src="{% static 'logos/Ssc_badge.jpg' %}" class="i2" align="right" style="background-color: #FFFFFF"></li><br><br>
+                <li><a href="../HC/" class="a4">Hindu College</a>
+                <img src="{% static 'logos/100px-Hindu_College_Logo.jpg' %}" class="i2" align="right" style="background-color: #FFFFFF"></li><br><br>
+                <li><a href="../SRCC/" class="a4">Shri Ram College of Commerce</a>
+                <img src="{% static 'logos/SRCC.jpg' %}" class="i2" align="right" style="background-color: #FFFFFF"></li><br><br>
+            </font>
+        </div></div>
+        <div class="d8">
+            <div class="d8a">
+                <font class="f1"><h3>Images</h3></font>
+                <img src="{% static 'pics/1.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/3.jpg' %}" width="120" height="64">
+                <br>
+                <img src="{% static 'pics/4.jpg' %}" width="120" height="80">&nbsp;&nbsp;<img src="{% static 'pics/6.jpg' %}" width="120" height="64">
+            </div>
+            <div class="d8b">
+                <font class="f1"><h3 style="color: #FFFFFF;">Comments</h3></font>
+                <font class="f1" style="color: white ;font-size: 0.8em; font-weight:bold;">
+                <table align="center">
+                    <tr>
+                        <td>
+                            Abhishek Vijhani
+                        </td>
+                        <td>
+                            Very Useful Website. It Helps me choose the college of my dreams.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ankit Verma
+                        </td>
+                        <td>
+                            Very Helpful Website.I wouls suggest it to my Friends.
+                        </td>
+                    </tr>
+
+                </table>
+                </font>
+            </div>
+            <div class="d8c">
+                <font class="f1"><h3>Ratings</h3></font>
+                <font class="f1" style="color: black ;font-size: 0.9em; font-weight:bold;" >
+                <table align="left">
+                    <tr>
+                        <td>
+                            Times of India
+                        </td>
+                        <td>
+                            4/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hindustan Times
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ABP News
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            NDTV India
+                        </td>
+                        <td>
+                            4.5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CNBC
+                        </td>
+                        <td>
+                            5/5
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            BBC News
+                        </td>
+                        <td>
+                            3.5/5
+                        </td>
+                    </tr>
+                </table>
+                    </font>
+            </div>
+        </div>
+        <div class="d9" style="text-align: center" >
+                <font class="f1">&copy;Copyright CampusDecidee</font>
+        </div>
+    <script>
+        if(!(sessionStorage.getItem('Uname')))
+        {
+            $("#d2a").show()
+            $("#d2b").hide()
+        }
+        else {
+
+            $("#d2a").hide()
+            var a = sessionStorage.getItem('Uname')
+            document.getElementById('sp1').innerHTML= a;
+
+        }
+    </script>
+</body>
+</html>
