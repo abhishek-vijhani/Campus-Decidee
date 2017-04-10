@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `campus_decidee` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `campus_decidee`;
+CREATE DATABASE  IF NOT EXISTS `performance_schema` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `performance_schema`;
 -- MySQL dump 10.13  Distrib 5.6.11, for Win32 (x86)
 --
--- Host: localhost    Database: campus_decidee
+-- Host: localhost    Database: performance_schema
 -- ------------------------------------------------------
 -- Server version	5.6.13
 
@@ -18,27 +18,33 @@ USE `campus_decidee`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `college`
+-- Table structure for table `events_stages_history`
 --
 
-DROP TABLE IF EXISTS `college`;
+DROP TABLE IF EXISTS `events_stages_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `college` (
-  `Cid` int(11) NOT NULL AUTO_INCREMENT,
-  `Cname` text,
-  PRIMARY KEY (`Cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+CREATE TABLE `events_stages_history` (
+  `THREAD_ID` bigint(20) unsigned NOT NULL,
+  `EVENT_ID` bigint(20) unsigned NOT NULL,
+  `END_EVENT_ID` bigint(20) unsigned DEFAULT NULL,
+  `EVENT_NAME` varchar(128) NOT NULL,
+  `SOURCE` varchar(64) DEFAULT NULL,
+  `TIMER_START` bigint(20) unsigned DEFAULT NULL,
+  `TIMER_END` bigint(20) unsigned DEFAULT NULL,
+  `TIMER_WAIT` bigint(20) unsigned DEFAULT NULL,
+  `NESTING_EVENT_ID` bigint(20) unsigned DEFAULT NULL,
+  `NESTING_EVENT_TYPE` enum('STATEMENT','STAGE','WAIT') DEFAULT NULL
+) ENGINE=PERFORMANCE_SCHEMA DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `college`
+-- Dumping data for table `events_stages_history`
 --
 
-LOCK TABLES `college` WRITE;
-/*!40000 ALTER TABLE `college` DISABLE KEYS */;
-INSERT INTO `college` VALUES (1,'Delhi Technological University'),(2,'Jagan Institute of Management Studies'),(3,'Vivekananda Institute of Professional Studies'),(4,'Bharti Vidyapeeth'),(5,'Maharaja Agrasen Institute of Technology'),(6,'Maharaja Surajmal Institute of Technology'),(7,'St. Stephens College'),(8,'Hindu College'),(9,'Shri Venkateshwara College'),(10,'Shri Ram College of Commerce');
-/*!40000 ALTER TABLE `college` ENABLE KEYS */;
+LOCK TABLES `events_stages_history` WRITE;
+/*!40000 ALTER TABLE `events_stages_history` DISABLE KEYS */;
+/*!40000 ALTER TABLE `events_stages_history` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-14  1:19:47
+-- Dump completed on 2016-07-14  1:22:17

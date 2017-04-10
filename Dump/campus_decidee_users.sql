@@ -32,7 +32,7 @@ CREATE TABLE `users` (
   `u_email` varchar(50) DEFAULT NULL,
   `passwrd` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`Uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Ankit Verma','9953307744','1994-09-18','ankitverma@gmail.com','ankitverma'),(2,'Shweta Singh','7768599940','1990-12-09','ss.shweta@gmail.com','shwetasingh'),(3,'Abhishek','9984466576','1990-12-06','abhi.1992@gmail.com','abhishek'),(4,'Harmeet','9987678890','1988-11-10','hs@gmail.com','harmeet'),(5,'Sheetal Sherawat','9908977066','1994-08-29','sheetal.sher@gmail.com','sheetalsherawat'),(6,'Abhishek','9899485900','1994-08-07','abhishek@gmail.com','abhishek');
+INSERT INTO `users` VALUES (1,'Ankit Verma','9953307744','1994-09-18','ankitverma@gmail.com','ankitverma'),(2,'Shweta Singh','7768599940','1990-12-09','ss.shweta@gmail.com','shwetasingh'),(3,'Abhishek','9984466576','1990-12-06','abhi.1992@gmail.com','abhishek'),(4,'Harmeet','9987678890','1988-11-10','hs@gmail.com','harmeet'),(5,'Sheetal Sherawat','9908977066','1994-08-29','sheetal.sher@gmail.com','sheetalsherawat'),(6,'Abhishek','9899485900','1994-08-07','abhishek@gmail.com','abhishek'),(7,'Kshitij Verma','9953899156','1990-09-29','ktz.kshitij94@gmail.com','kshitijverma');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-13 14:57:59
+-- Dump completed on 2016-07-14  1:19:48

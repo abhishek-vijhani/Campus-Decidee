@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `campus_decidee` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `campus_decidee`;
+CREATE DATABASE  IF NOT EXISTS `performance_schema` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `performance_schema`;
 -- MySQL dump 10.13  Distrib 5.6.11, for Win32 (x86)
 --
--- Host: localhost    Database: campus_decidee
+-- Host: localhost    Database: performance_schema
 -- ------------------------------------------------------
 -- Server version	5.6.13
 
@@ -18,27 +18,27 @@ USE `campus_decidee`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `college`
+-- Table structure for table `setup_actors`
 --
 
-DROP TABLE IF EXISTS `college`;
+DROP TABLE IF EXISTS `setup_actors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `college` (
-  `Cid` int(11) NOT NULL AUTO_INCREMENT,
-  `Cname` text,
-  PRIMARY KEY (`Cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+CREATE TABLE `setup_actors` (
+  `HOST` char(60) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '%',
+  `USER` char(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '%',
+  `ROLE` char(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '%'
+) ENGINE=PERFORMANCE_SCHEMA DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `college`
+-- Dumping data for table `setup_actors`
 --
 
-LOCK TABLES `college` WRITE;
-/*!40000 ALTER TABLE `college` DISABLE KEYS */;
-INSERT INTO `college` VALUES (1,'Delhi Technological University'),(2,'Jagan Institute of Management Studies'),(3,'Vivekananda Institute of Professional Studies'),(4,'Bharti Vidyapeeth'),(5,'Maharaja Agrasen Institute of Technology'),(6,'Maharaja Surajmal Institute of Technology'),(7,'St. Stephens College'),(8,'Hindu College'),(9,'Shri Venkateshwara College'),(10,'Shri Ram College of Commerce');
-/*!40000 ALTER TABLE `college` ENABLE KEYS */;
+LOCK TABLES `setup_actors` WRITE;
+/*!40000 ALTER TABLE `setup_actors` DISABLE KEYS */;
+INSERT INTO `setup_actors` VALUES ('%','%','%');
+/*!40000 ALTER TABLE `setup_actors` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-14  1:19:47
+-- Dump completed on 2016-07-14  1:22:24

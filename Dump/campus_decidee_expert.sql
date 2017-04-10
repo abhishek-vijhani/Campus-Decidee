@@ -33,7 +33,7 @@ CREATE TABLE `expert` (
   `eemail` varchar(50) DEFAULT NULL,
   `passwrd` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`eid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `expert` (
 
 LOCK TABLES `expert` WRITE;
 /*!40000 ALTER TABLE `expert` DISABLE KEYS */;
-INSERT INTO `expert` VALUES (1,'Dr. Ravinder Singh','8946778890','P.H.D Information Technology, M.tech Information Technology, B.tech Information Technology, Associate Professor at VIPS','17 years of Industrial Experience, 14 years of teaching experience at JIMS and VIPS','ravisingh.rs@gmail.com','ravindersingh'),(2,'Dr. B.K. Gupta','9986775645','P.H.D Artificial Intelligence, M.tech Computer Science, B.tech Computer Science.','20 years Industrial Experience, 15 years teaching Experience at D.T.U','bkgupta@gmail.com','bkumargupta');
+INSERT INTO `expert` VALUES (1,'Dr. Ravinder Singh','8946778890','P.H.D Information Technology, M.tech Information Technology, B.tech Information Technology, Associate Professor at VIPS','17 years of Industrial Experience, 14 years of teaching experience at JIMS and VIPS','ravisingh.rs@gmail.com','ravindersingh'),(2,'Dr. B.K. Gupta','9986775645','P.H.D Artificial Intelligence, M.tech Computer Science, B.tech Computer Science.','20 years Industrial Experience, 15 years teaching Experience at D.T.U','bkgupta@gmail.com','bkumargupta'),(3,'Dr. P.K. Aggarwal','8897000985','P.H.D Information Security, M.Sc. Computer Science, B.Sc. Computer Science','20 years of teaching experience at Delhi University','aggrwal.pk@gmail.com','pkaggarwal');
 /*!40000 ALTER TABLE `expert` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-13 14:57:59
+-- Dump completed on 2016-07-14  1:19:49

@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `campus_decidee` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `campus_decidee`;
+CREATE DATABASE  IF NOT EXISTS `mysql` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `mysql`;
 -- MySQL dump 10.13  Distrib 5.6.11, for Win32 (x86)
 --
--- Host: localhost    Database: campus_decidee
+-- Host: localhost    Database: mysql
 -- ------------------------------------------------------
 -- Server version	5.6.13
 
@@ -18,27 +18,33 @@ USE `campus_decidee`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `college`
+-- Table structure for table `tables_priv`
 --
 
-DROP TABLE IF EXISTS `college`;
+DROP TABLE IF EXISTS `tables_priv`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `college` (
-  `Cid` int(11) NOT NULL AUTO_INCREMENT,
-  `Cname` text,
-  PRIMARY KEY (`Cid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+CREATE TABLE `tables_priv` (
+  `Host` char(60) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `Db` char(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `User` char(16) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `Table_name` char(64) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `Grantor` char(77) COLLATE utf8_bin NOT NULL DEFAULT '',
+  `Timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Table_priv` set('Select','Insert','Update','Delete','Create','Drop','Grant','References','Index','Alter','Create View','Show view','Trigger') CHARACTER SET utf8 NOT NULL DEFAULT '',
+  `Column_priv` set('Select','Insert','Update','References') CHARACTER SET utf8 NOT NULL DEFAULT '',
+  PRIMARY KEY (`Host`,`Db`,`User`,`Table_name`),
+  KEY `Grantor` (`Grantor`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table privileges';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `college`
+-- Dumping data for table `tables_priv`
 --
 
-LOCK TABLES `college` WRITE;
-/*!40000 ALTER TABLE `college` DISABLE KEYS */;
-INSERT INTO `college` VALUES (1,'Delhi Technological University'),(2,'Jagan Institute of Management Studies'),(3,'Vivekananda Institute of Professional Studies'),(4,'Bharti Vidyapeeth'),(5,'Maharaja Agrasen Institute of Technology'),(6,'Maharaja Surajmal Institute of Technology'),(7,'St. Stephens College'),(8,'Hindu College'),(9,'Shri Venkateshwara College'),(10,'Shri Ram College of Commerce');
-/*!40000 ALTER TABLE `college` ENABLE KEYS */;
+LOCK TABLES `tables_priv` WRITE;
+/*!40000 ALTER TABLE `tables_priv` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tables_priv` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-07-14  1:19:47
+-- Dump completed on 2016-07-14  1:21:29
